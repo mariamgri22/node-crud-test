@@ -1,0 +1,19 @@
+{
+  "name": "nodecrud",
+  "version": "1.0.0",
+  "description": "node-exress\u001b[D\u001b[D\u001b[D\u001b[Dp\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[D\u001b[D\u001b[D-sequlize-sql",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "sequelize": "^6.25.7",
+    "sqlite3": "^5.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
