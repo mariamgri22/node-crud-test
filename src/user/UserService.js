@@ -1,10 +1,12 @@
 const User = require("./User");
 const UserNotFoundException = require("./UserNotFoundException");
+const bcrypt = require("bcrypt");
 
 const create = async (body) => {
-  await User.create(body);
+  const { username, email, password } = body;
+  const hashedPassword = await bcrypt.hash(password, 10);
+  await User.create({ username, email, password: hashedPassword });
 };
-
 const getUsers = async (pagination) => {
   const { page, size } = pagination;
 
