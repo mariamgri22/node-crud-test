@@ -13,6 +13,7 @@ const getUsers = async (pagination) => {
   const usersWithCount = await User.findAndCountAll({
     limit: size,
     offset: page * size,
+    attributes: ["id", "username", "email"],
   });
   return {
     content: usersWithCount.rows,
@@ -21,10 +22,18 @@ const getUsers = async (pagination) => {
 };
 
 const getUser = async (id) => {
-  const user = await User.findOne({ where: { id: id } });
+  const user = await User.findOne({
+    where: { id: id },
+    attributes: ["id", "username", "email"],
+  });
   if (!user) {
     throw new UserNotFoundException();
   }
+
+  // const userAsJSON = user.get();
+  // console.log("🚀 ~ file: UserService.js:30 ~ getUser ~ userAsJSON:", user);
+  // delete userAsJSON.password;
+  // return userAsJSON;
   return user;
 };
 const updateUser = async (id, body) => {

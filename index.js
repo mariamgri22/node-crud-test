@@ -2,15 +2,16 @@ const sequelize = require("./src/config/database");
 const User = require("./src/user/User");
 const Article = require("./src/article/Article");
 const app = require("./src/app");
+const UserService = require("./src/user/UserService");
 
 sequelize.sync({ force: true }).then(async () => {
-  for (let i = 0; i < 25; i++) {
+  for (let i = 0; i < 5; i++) {
     const user = {
       username: `user${i}`,
       email: `user${i}@mail.com`,
       password: `password`,
     };
-    await User.create(user);
+    await UserService.create(user);
     const article = {
       content: `content ${i}`,
     };
