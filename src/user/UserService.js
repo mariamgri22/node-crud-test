@@ -25,18 +25,22 @@ const getUser = async (id) => {
   }
   return user;
 };
-const updateUser=async(id,body)=>{
+const updateUser = async (id, body) => {
   const user = await User.findOne({ where: { id: id } });
   user.username = body.username;
   await user.save();
-}
-const deleteUser=async(id)=>{
-    await User.destroy({ where: { id: id } });
-}
+};
+const deleteUser = async (id) => {
+  await User.destroy({ where: { id: id } });
+};
+const findByEmail = async (email) => {
+  return await User.findOne({ where: { email: email } });
+};
 module.exports = {
   create,
   getUsers,
   getUser,
   updateUser,
-  deleteUser
+  deleteUser,
+  findByEmail,
 };
