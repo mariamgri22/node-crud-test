@@ -1,8 +1,8 @@
 const sequelize = require("./src/config/database");
-const User = require("./src/user/User");
 const Article = require("./src/article/Article");
 const app = require("./src/app");
 const UserService = require("./src/user/UserService");
+
 
 sequelize.sync({ force: true }).then(async () => {
   for (let i = 0; i < 5; i++) {

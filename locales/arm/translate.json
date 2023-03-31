@@ -1,0 +1,10 @@
+{
+    "user_create_success": "Օգտագործողը ստեղծվել է",
+    "user_not_found_exception": "Օգտատերը չի գտնվել",
+    "invalid_id_exception": "Անվավեր նույնացուցիչ",
+    "validation_exception": "Անվավեր հարցում",
+    "username_null": "Օգտվողի անունը չի կարող դատարկ լինել",
+    "username_size": "Օգտանունը պետք է ունենա նվազագույնը 4 առավելագույնը 32 նիշ",
+    "email_invalid": "Պետք է լինի վավեր էլփոստի հասցե",
+    "email_inuse": "Օգտագործված էլփոստ"
+  }
