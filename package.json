@@ -4,12 +4,15 @@
   "description": "node-exress\u001b[D\u001b[D\u001b[D\u001b[Dp\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[D\u001b[D\u001b[D-sequlize-sql",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index"
+    "start": "cross-env NODE_ENV=development nodemon index",
+    "start:prod": "cross-env NODE_ENV=production node index",
+    "start:staging": "cross-env NODE_ENV=staging node index"   
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "config": "^3.3.9",
     "express": "^4.18.2",
     "express-validator": "^6.15.0",
     "i18next": "^22.4.13",
@@ -19,6 +22,7 @@
     "sqlite3": "^5.1.2"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "nodemon": "^2.0.20"
   }
 }
