@@ -1,3 +1,4 @@
+const Article = require("../article/Article");
 const User = require("./User");
 const UserNotFoundException = require("./UserNotFoundException");
 const bcrypt = require("bcrypt");
@@ -14,6 +15,12 @@ const getUsers = async (pagination) => {
     limit: size,
     offset: page * size,
     attributes: ["id", "username", "email"],
+    include: [
+      {
+        model: Article,
+        as: "articles",
+      },
+    ],
   });
   return {
     content: usersWithCount.rows,
